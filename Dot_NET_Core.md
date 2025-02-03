@@ -16,6 +16,13 @@ Answer: Services lifetime is specified when a service is registerd by `Dependenc
   * `Scoped` : A service is created once per client request or connection.
   * `Transient` : A service is created each time it's requested. 
 
+## What is Authentication and Authorization in .NET Core?
+Answer: 
+* `Authentication`: Authentication means checking a user is valid or not.
+  * `Example`- A person which is loging with `UserId` and `Password` checking this user is valid or not is an example `Authentication`.
+* `Authorization` : Authorization means that this user is valid and allowed to access the services according to it's role.
+  * `Example` - After successfull `Authentication` redirection to User Dashboard is called `Authorization`.
+
 
 
 
