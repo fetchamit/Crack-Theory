@@ -186,8 +186,12 @@ C# is a statically typed, object-oriented programming language developed by Micr
 - Cross-platform compatibility with .NET Core
 
 ## 3. What is the difference between `==` and `Equals()` in C#?
-- `==` checks for reference equality for reference types and value equality for value types.
-- `Equals()` is a method that checks the equality of two objects based on their content. It can be overridden to compare the state of objects.
+- `==`
+  * performs type checking during compilation.
+  * It also works with null values.
+- `Equals()`
+  * while Equals() performs type checking during runtime.
+  * Equals() crashes when comparing null values. 
 
 ## 4. What is a class and an object in C#?
 - A **class** is a blueprint or template that defines the properties, methods, and behaviors of an object.
