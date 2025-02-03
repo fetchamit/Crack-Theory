@@ -448,7 +448,7 @@ finally
     // Close the connection in the finally block
     conn.Close();
 }
-
+```
 
 10. What is a Transaction in ADO.NET?
 A Transaction is used to ensure that a series of database operations are treated as a single unit of work. If any operation in the transaction fails, all previous operations are rolled back to maintain data consistency.
