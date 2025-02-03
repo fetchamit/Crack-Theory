@@ -450,21 +450,22 @@ finally
 }
 ```
 
-10. What is a Transaction in ADO.NET?
+## 10. What is a Transaction in ADO.NET?
 A Transaction is used to ensure that a series of database operations are treated as a single unit of work. If any operation in the transaction fails, all previous operations are rolled back to maintain data consistency.
 
-11. What is the use of DataAdapter in ADO.NET?
+## 11. What is the use of DataAdapter in ADO.NET?
 A DataAdapter is used to fill a DataSet or DataTable with data from the database and to update the database with changes made in the DataSet or DataTable. It works in the disconnected mode by automatically managing the database connection for reading and writing operations.
 
-12. What is the difference between ExecuteReader, ExecuteScalar, and ExecuteNonQuery in ADO.NET?
-ExecuteReader: Used to execute a query that returns multiple rows (e.g., SELECT statement) and returns a SqlDataReader object for reading the data.
-ExecuteScalar: Used to execute a query that returns a single value (e.g., an aggregate function like COUNT or SUM).
-ExecuteNonQuery: Used to execute a query that does not return any data (e.g., INSERT, UPDATE, DELETE), and it returns the number of affected rows.
-13. How do you update a database using DataSet in ADO.NET?
+## 12. What is the difference between ExecuteReader, ExecuteScalar, and ExecuteNonQuery in ADO.NET?
+`ExecuteReader` : Used to execute a query that returns multiple rows `(e.g., SELECT statement)` and returns a `SqlDataReader` object for reading the data.
+`ExecuteScalar` : Used to execute a query that returns a single value `(e.g., an aggregate function like COUNT or SUM)`.
+`ExecuteNonQuery` : Used to execute a query that does not return any data `(e.g., INSERT, UPDATE, DELETE)`, and it returns the number of affected rows.
+
+## 13. How do you update a database using DataSet in ADO.NET?
 To update a database using a DataSet, you can use a DataAdapter object with its Update method. This method sends the changes made in the DataSet to the database:
 
-csharp
-Copy code
+```csharp
+
 SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Users", connection);
 SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
 DataSet ds = new DataSet();
@@ -475,39 +476,41 @@ ds.Tables["Users"].Rows[0]["Name"] = "Updated Name";
 
 // Update the database with the changes
 adapter.Update(ds, "Users");
-14. What is CommandBuilder in ADO.NET?
+```
+
+## 14. What is CommandBuilder in ADO.NET?
 A CommandBuilder automatically generates SQL commands (INSERT, UPDATE, DELETE) for a DataAdapter based on the SELECT statement. It is useful when you want to perform operations like updating or deleting rows in the database directly from a DataSet.
 
-15. How do you connect to a SQL Server database using ADO.NET?
+## 15. How do you connect to a SQL Server database using ADO.NET?
 To connect to a SQL Server database, you can use the SqlConnection class. Example:
 
-csharp
-Copy code
+```csharp
+
 string connectionString = "Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;";
 SqlConnection conn = new SqlConnection(connectionString);
 conn.Open();
-16. What is ExecuteScalar used for in ADO.NET?
-ExecuteScalar is used to execute a query that returns a single value, such as an aggregate function (COUNT(), SUM(), etc.). It returns the first column of the first row in the result set, ignoring other columns and rows.
+```
+## 16. What is ExecuteScalar used for in ADO.NET?
+ExecuteScalar is used to execute a query that returns a single value, such as an aggregate function `(COUNT(), SUM(), etc.)`. It returns the first column of the first row in the result set, ignoring other columns and rows.
 
-17. How do you perform paging in ADO.NET?
-Paging can be achieved by using SQL queries with LIMIT (for MySQL) or OFFSET and FETCH (for SQL Server). Example for SQL Server:
+## 17. How do you perform paging in ADO.NET?
+Paging can be achieved by using SQL queries with `LIMIT (for MySQL) or OFFSET and FETCH (for SQL Server)`. Example for SQL Server:
 
-sql
+```sql
 Copy code
 SELECT * FROM Users
 ORDER BY UserID
 OFFSET 0 ROWS
 FETCH NEXT 10 ROWS ONLY;
 You can use the SqlCommand object to execute these queries and retrieve the paged data.
-
-18. What is connection pooling in ADO.NET?
+```
+## 18. What is connection pooling in ADO.NET?
 Connection pooling is a technique used to reduce the overhead of opening and closing database connections repeatedly. Instead of opening a new connection every time, a pool of reusable connections is maintained, improving the application's performance and scalability.
 
-19. What are the advantages of using DataSet over DataReader?
-DataSet: Works in a disconnected manner and can hold multiple tables with their relationships, making it suitable for complex data operations.
-DataReader: Works in a connected manner and provides faster, forward-only, read-only data access.
-20. What is the role of the SqlParameter in ADO.NET?
+## 19. What are the advantages of using DataSet over DataReader?
+`DataSet`: Works in a disconnected manner and can hold multiple tables with their relationships, making it suitable for complex data operations.
+`DataReader`: Works in a connected manner and provides faster, forward-only, read-only data access.
+
+## 20. What is the role of the SqlParameter in ADO.NET?
 SqlParameter is used to represent parameters in SQL queries or stored procedures. It helps prevent SQL injection attacks by allowing parameters to be passed to queries securely.
 
-vbnet
-Copy code
