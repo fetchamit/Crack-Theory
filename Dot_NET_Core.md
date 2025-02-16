@@ -23,6 +23,27 @@ Answer:
 * `Authorization` : Authorization means that this user is valid and allowed to access the services according to it's role.
   * `Example` - After successfull `Authentication` redirection to User Dashboard is called `Authorization`.
 
+## What is the purpose of the async keyword in .NET?
+* The `async` keyword is used to define asynchronous methods in C#. It allows methods to run asynchronously without blocking the main thread. It sends that method to another thread to perform task.
+
+``` csharp
+public async Task<string> FetchDataAsync()
+{
+    await Task.Delay(1000); // Simulates data fetching
+    return "Data fetched!";
+}
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
